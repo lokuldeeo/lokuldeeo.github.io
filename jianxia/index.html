@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剑侠世界官方下载-最新客户端下载与游戏资料大全</title>
+    <meta name="description" content="剑侠世界官方下载页面，提供最新游戏客户端、资料片下载，了解门派职业、玩法攻略与江湖资讯，尽享武侠世界。">
+    <meta name="keywords" content="剑侠世界官方下载,剑侠世界,客户端下载,武侠游戏,剑侠情缘">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 顶部导航 */
+        .top-bar {
+            background: #0f0f1a;
+            padding: 8px 0;
+            font-size: 14px;
+            border-bottom: 1px solid #2d2d4a;
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+        .top-links a:hover {
+            color: #f0b90b;
+        }
+        /* 主头部 */
+        .main-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px 0;
+            border-bottom: 3px solid #f0b90b;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(145deg, #f0b90b, #d49a0a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a1a2e;
+            box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3);
+        }
+        .logo-text h1 {
+            font-size: 32px;
+            color: #f0b90b;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .logo-text p {
+            font-size: 14px;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+        /* 导航菜单 */
+        .nav-menu {
+            background: #16213e;
+            padding: 0;
+            border-bottom: 1px solid #2d2d4a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav-menu li {
+            position: relative;
+        }
+        .nav-menu a {
+            display: block;
+            padding: 15px 25px;
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #f0b90b;
+            border-bottom-color: #f0b90b;
+            background: rgba(240, 185, 11, 0.05);
+        }
+        /* Hero区域 */
+        .hero {
+            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 50%, #0f3460 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(240,185,11,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .hero-text h2 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .hero-text h2 span {
+            color: #f0b90b;
+        }
+        .hero-text p {
+            font-size: 16px;
+            color: #b0b0c0;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(145deg, #f0b90b, #d49a0a);
+            color: #1a1a2e;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-right: 15px;
+        }
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(240, 185, 11, 0.5);
+        }
+        .download-btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #f0b90b;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            border: 2px solid #f0b90b;
+            transition: all 0.3s;
+        }
+        .download-btn-secondary:hover {
+            background: rgba(240, 185, 11, 0.1);
+            transform: translateY(-2px);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item .num {
+            font-size: 28px;
+            color: #f0b90b;
+            font-weight: bold;
+        }
+        .stat-item .label {
+            font-size: 13px;
+            color: #888;
+        }
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        .hero-placeholder {
+            background: linear-gradient(145deg, #2d2d4a, #1a1a2e);
+            border-radius: 15px;
+            padding: 60px 40px;
+            border: 1px solid #3d3d5a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .hero-placeholder .game-title {
+            font-size: 36px;
+            color: #f0b90b;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+        .hero-placeholder .game-subtitle {
+            font-size: 16px;
+            color: #aaa;
+            letter-spacing: 2px;
+        }
+        /* 公告栏 */
+        .notice-bar {
+            background: #0f0f1a;
+            padding: 12px 0;
+            border-bottom: 1px solid #2d2d4a;
+        }
+        .notice-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .notice-label {
+            background: #f0b90b;
+            color: #1a1a2e;
+            padding: 3px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+        .notice-text {
+            color: #ccc;
+            font-size: 14px;
+        }
+        .notice-text a {
+            color: #f0b90b;
+            text-decoration: none;
+        }
+        /* 游戏特色 */
+        .features {
+            padding: 60px 0;
+            background: #1a1a2e;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #f0b90b;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #f0b90b;
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .feature-card {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #2d2d4a;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-color: #f0b90b;
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(240,185,11,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            color: #f0b90b;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: #aaa;
+            font-size: 14px;
+        }
+        /* 下载区域 */
+        .download-section {
+            padding: 60px 0;
+            background: #16213e;
+        }
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .download-card {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #2d2d4a;
+            transition: transform 0.3s;
+        }
+        .download-card:hover {
+            transform: scale(1.03);
+        }
+        .download-card .version {
+            font-size: 20px;
+            color: #f0b90b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .download-card .size {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        .download-card .desc {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+        .download-card .btn {
+            display: inline-block;
+            background: #f0b90b;
+            color: #1a1a2e;
+            padding: 10px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .download-card .btn:hover {
+            background: #d49a0a;
+            transform: translateY(-2px);
+        }
+        .download-tips {
+            margin-top: 30px;
+            background: rgba(240,185,11,0.05);
+            border: 1px solid rgba(240,185,11,0.2);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .download-tips h3 {
+            color: #f0b90b;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .download-tips ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .download-tips li {
+            padding: 5px 0;
+            color: #aaa;
+            font-size: 14px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .download-tips li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #f0b90b;
+        }
+        /* 新闻资讯 */
+        .news-section {
+            padding: 60px 0;
+            background: #1a1a2e;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .news-card {
+            background: #16213e;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #2d2d4a;
+        }
+        .news-card:hover {
+            transform: translateY(-3px);
+        }
+        .news-card .news-content {
+            padding: 20px;
+        }
+        .news-card .news-date {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .news-card h3 {
+            font-size: 18px;
+            color: #e0e0e0;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .news-card h3 a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .news-card h3 a:hover {
+            color: #f0b90b;
+        }
+        .news-card p {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+        /* 门派职业 */
+        .class-section {
+            padding: 60px 0;
+            background: #16213e;
+        }
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .class-item {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #2d2d4a;
+        }
+        .class-item:hover {
+            border-color: #f0b90b;
+            transform: translateY(-3px);
+        }
+        .class-item .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .class-item h3 {
+            color: #f0b90b;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .class-item p {
+            color: #aaa;
+            font-size: 13px;
+        }
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+            background: #1a1a2e;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+        .faq-item {
+            background: #16213e;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 18px 25px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #e0e0e0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+            border-left: 3px solid transparent;
+        }
+        .faq-question:hover {
+            background: rgba(240,185,11,0.05);
+            border-left-color: #f0b90b;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: #f0b90b;
+        }
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 25px 20px;
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        /* 页脚 */
+        .main-footer {
+            background: #0f0f1a;
+            padding: 40px 0 20px;
+            border-top: 3px solid #f0b90b;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h3 {
+            color: #f0b90b;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+        .footer-col ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        .footer-col ul li a:hover {
+            color: #f0b90b;
+        }
+        .footer-bottom {
+            border-top: 1px solid #2d2d4a;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .logo-text h1 {
+                font-size: 24px;
+            }
+            .hero-text h2 {
+                font-size: 28px;
+            }
+            .hero-content {
+                flex-direction: column;
+            }
+            .download-btn {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+            .nav-menu a {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            .section-title {
+                font-size: 26px;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 480px) {
+            .top-links a {
+                display: none;
+            }
+            .logo-area {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo-text h1 {
+                font-size: 22px;
+            }
+            .hero-text h2 {
+                font-size: 24px;
+            }
+            .download-btn, .download-btn-secondary {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+            }
+            .hero-stats {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <span>欢迎来到剑侠世界官方下载中心</span>
+            <div class="top-links">
+                <a href="#download">下载中心</a>
+                <a href="#news">新闻资讯</a>
+                <a href="#faq">帮助中心</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主头部 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="logo-icon">剑</div>
+                <div class="logo-text">
+                    <h1>剑侠世界</h1>
+                    <p>JIANXIA WORLD · 官方下载站</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航 -->
+    <nav class="nav-menu">
+        <div class="container">
+            <ul>
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#download">下载中心</a></li>
+                <li><a href="#features">游戏特色</a></li>
+                <li><a href="#news">新闻资讯</a></li>
+                <li><a href="#class">门派职业</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero 区域 -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>踏入<span>剑侠世界</span><br>书写你的江湖传奇</h2>
+                        <p>《剑侠世界》是一款以南宋抗金为背景的武侠网游，由西山居倾力打造。游戏以其丰富的门派系统、精彩的剧情任务和激烈的PVP玩法深受玩家喜爱。现在下载官方客户端，开启你的江湖之旅！</p>
+                        <div>
+                            <a href="#download" class="download-btn">立即下载客户端</a>
+                            <a href="#features" class="download-btn-secondary">了解游戏特色</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="num">12+</div>
+                                <div class="label">门派职业</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="num">50+</div>
+                                <div class="label">地图场景</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="num">1000+</div>
+                                <div class="label">装备系统</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-placeholder">
+                            <div class="game-title">剑侠世界</div>
+                            <div class="game-subtitle">JIANXIA WORLD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公告栏 -->
+        <div class="notice-bar">
+            <div class="container">
+                <div class="notice-content">
+                    <span class="notice-label">最新公告</span>
+                    <span class="notice-text">新服【龙腾盛世】火爆开启，登录即送豪华礼包！<a href="#news">查看详情 →</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 游戏特色 -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">游戏特色</h2>
+                <p class="section-subtitle">感受最真实的武侠世界，体验最纯粹的江湖人生</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3>经典门派</h3>
+                        <p>少林、武当、峨眉、丐帮等十二大门派任你选择，每个门派都有独特的武学体系和玩法定位，体验不同风格的战斗乐趣。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>丰富装备</h3>
+                        <p>数百种装备套装，多样化的属性搭配，打造专属于你的个性角色。强化、镶嵌、精炼，深度养成系统等你探索。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏯</div>
+                        <h3>帮派战争</h3>
+                        <p>千人同屏的帮派攻城战，策略与实力的较量。与兄弟们并肩作战，争夺武林霸主地位，成就一方霸业。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📜</div>
+                        <h3>剧情任务</h3>
+                        <p>南宋抗金历史背景，跌宕起伏的主线剧情。丰富的支线任务和奇遇系统，带你领略那个时代的家国情怀与江湖恩怨。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 下载区域 -->
+        <section class="download-section" id="download">
+            <div class="container">
+                <h2 class="section-title">官方下载</h2>
+                <p class="section-subtitle">请根据您的需求选择合适的客户端版本</p>
+                <div class="download-grid">
+                    <div class="download-card">
+                        <div class="version">完整客户端</div>
+                        <div class="size">v5.8.2 · 约 8.5GB</div>
+                        <div class="desc">包含全部游戏内容，适合新玩家下载。下载完成后即可直接进入游戏，体验完整的剑侠世界。</div>
+                        <a href="#" class="btn">立即下载</a>
+                    </div>
+                    <div class="download-card">
+                        <div class="version">精简客户端</div>
+                        <div class="size">v5.8.2 · 约 3.2GB</div>
+                        <div class="desc">文件较小，下载速度更快。进入游戏后可根据需要选择性下载地图资源，节省磁盘空间。</div>
+                        <a href="#" class="btn">立即下载</a>
+                    </div>
+                    <div class="download-card">
+                        <div class="version">微端下载</div>
+                        <div class="size">v5.8.2 · 约 200MB</div>
+                        <div class="desc">极速下载体验，边玩边下。适合网络环境较好、追求快速进入游戏的玩家。</div>
+                        <a href="#" class="btn">立即下载</a>
+                    </div>
+                </div>
+                <div class="download-tips">
+                    <h3>下载前必读</h3>
+                    <ul>
+                        <li>请确认您的电脑配置满足游戏运行要求，建议Windows 10及以上操作系统。</li>
+                        <li>客户端下载完成后，请校验文件完整性，确保安装过程顺利。</li>
+                        <li>安装过程中请关闭杀毒软件，以免误报导致安装失败。</li>
+                        <li>如遇下载问题，可尝试更换下载线路或使用下载工具。</li>
+                        <li>游戏过程中如遇到问题，可联系官方客服获得支持。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新闻资讯 -->
+        <section class="news-section" id="news">
+            <div class="container">
+                <h2 class="section-title">新闻资讯</h2>
+                <p class="section-subtitle">最新游戏动态，尽在掌握</p>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-content">
+                            <div class="news-date">2025-01-15</div>
+                            <h3><a href="#">新版本"龙腾盛世"正式上线，全新玩法等你体验</a></h3>
+                            <p>本次更新带来了全新的帮派战玩法、新的装备套装以及多项系统优化，为玩家带来更丰富的游戏体验。</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-content">
+                            <div class="news-date">2025-01-12</div>
+                            <h3><a href="#">剑侠世界年度盛典圆满落幕，精彩回顾尽在其中</a></h3>
+                            <p>年度玩家盛典已圆满结束，感谢所有玩家的支持与陪伴。让我们回顾那些精彩瞬间，期待明年再相聚。</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-content">
+                            <div class="news-date">2025-01-08</div>
+                            <h3><a href="#">春节活动预告：多重福利即将开启</a></h3>
+                            <p>春节将至，我们为各位侠士准备了丰富的节日活动与福利，敬请期待即将上线的春节特别版本。</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-content">
+                            <div class="news-date">2025-01-05</div>
+                            <h3><a href="#">官方社区全新改版上线，更多互动功能等你体验</a></h3>
+                            <p>全新的官方社区现已上线，支持发帖、评论、组队等功能，方便玩家交流游戏心得，分享江湖趣事。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 门派职业 -->
+        <section class="class-section" id="class">
+            <div class="container">
+                <h2 class="section-title">门派职业</h2>
+                <p class="section-subtitle">十二大门派，各有千秋，选择你的江湖之路</p>
+                <div class="class-grid">
+                    <div class="class-item">
+                        <div class="icon">🛡️</div>
+                        <h3>少林</h3>
+                        <p>近战防御，金刚不坏</p>
+                    </div>
+                    <div class="class-item">
+                        <div class="icon">⚔️</div>
+                        <h3>武当</h3>
+                        <p>远程输出，剑法飘逸</p>
+                    </div>
+                    <div class="class-item">
+                        <div class="icon">🌸</div>
+                        <h3>峨眉</h3>
+                        <p>治疗辅助，慈悲为怀</p>
+                    </div>
+                    <div class="class-item">
+                        <div class="icon">🍂</div>
+                        <h3>丐帮</h3>
+                        <p>近战控制，身法灵活</p>
+                    </div>
+                    <div class="class-item">
+                        <div class="icon">🐉</div>
+                        <h3>天龙</h3>
+                        <p>内外兼修，掌法精妙</p>
+                    </div>
+                    <div class="class-item">
+                        <div class="icon">🔥</div>
+                        <h3>明教</h3>
+                        <p>高爆发输出，圣火不灭</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <p class="section-subtitle">为您解答关于下载和游戏的疑问</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">如何获取剑侠世界官方下载链接？</div>
+                        <div class="faq-answer">您可以通过本页面的下载区域获取官方客户端。我们提供多个版本的下载选项，请根据您的需求选择合适的版本。请务必从官方网站或官方授权渠道下载，以确保您的账号安全。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏对电脑配置有什么要求？</div>
+                        <div class="faq-answer">一般来说，建议您的电脑配备Intel Core i5或同等性能的处理器，8GB及以上内存，以及支持DirectX 11的独立显卡。具体配置要求可在官网的系统需求页面查看。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">下载完成后如何安装游戏？</div>
+                        <div class="faq-answer">下载完成后，请解压文件并运行安装程序。安装过程中请按照提示操作，选择安装路径后等待安装完成。安装完成后，您可以通过桌面快捷方式或开始菜单启动游戏。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏是免费的吗？</div>
+                        <div class="faq-answer">《剑侠世界》采用免费游戏、道具收费的模式。您可以免费游玩大部分游戏内容，部分珍稀道具和外观需要通过游戏内商城购买获得。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">下载速度很慢怎么办？</div>
+                        <div class="faq-answer">如果下载速度较慢，建议您：1. 检查网络连接是否稳定；2. 尝试更换下载线路；3. 使用下载工具进行下载；4. 避开网络使用高峰时段。如仍有问题，请联系官方客服获取帮助。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">官方社区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>游戏支持</h3>
+                    <ul>
+                        <li><a href="#">客服中心</a></li>
+                        <li><a href="#">下载帮助</a></li>
+                        <li><a href="#">账号安全</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>相关链接</h3>
+                    <ul>
+                        <li><a href="#">官方网站</a></li>
+                        <li><a href="#">官方论坛</a></li>
+                        <li><a href="#">玩家社区</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>健康公告</h3>
+                    <ul>
+                        <li><a href="#">防沉迷系统</a></li>
+                        <li><a href="#">家长监护</a></li>
+                        <li><a href="#">实名认证</a></li>
+                        <li><a href="#">适龄提示</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+                <p>本网站为剑侠世界官方下载中心，仅供游戏下载与信息展示。游戏版权归西山居所有。</p>
+                <p style="margin-top: 10px;">© 2025 剑侠世界官方下载中心. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ交互
+        document.querySelectorAll('.faq-question').forEach(function(question) {
+            question.addEventListener('click', function() {
+                var item = this.parentElement;
+                var isActive = item.classList.contains('active');
+                // 关闭所有
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('active');
+                });
+                // 打开当前
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
