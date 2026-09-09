@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄罗斯购物网站-俄罗斯商品直购平台与海淘指南</title>
+    <meta name="description" content="俄罗斯购物网站大全，涵盖俄罗斯本土电商、俄罗斯特产、紫金、琥珀、食品、化妆品等商品直购信息，提供安全可靠的海淘流程与选购指南。">
+    <meta name="keywords" content="俄罗斯购物网站,俄罗斯海淘,俄罗斯商品,俄罗斯电商,俄罗斯特产,俄货直邮">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f4f6f8; color: #1a2a3a; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        .site-header { background: linear-gradient(135deg, #ffffff 0%, #eef2f7 100%); border-bottom: 1px solid #dce3ea; padding: 20px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo h1 { font-size: 1.9rem; font-weight: 800; color: #0b3d5c; letter-spacing: -0.5px; }
+        .logo h1 span { color: #d94f3d; }
+        .logo .sub { font-size: 0.8rem; color: #5a7184; font-weight: 400; letter-spacing: 1px; margin-top: 2px; }
+        .header-search { flex: 1; max-width: 400px; display: flex; }
+        .header-search input { width: 100%; padding: 12px 18px; border: 1px solid #cbd5e0; border-radius: 30px 0 0 30px; font-size: 0.95rem; outline: none; }
+        .header-search button { padding: 12px 20px; background: #0b3d5c; color: white; border: none; border-radius: 0 30px 30px 0; cursor: pointer; font-weight: 600; }
+        .header-contact { font-size: 0.9rem; color: #2d4b65; text-align: right; }
+        .header-contact strong { display: block; font-size: 1.1rem; color: #0b3d5c; }
+
+        /* Nav */
+        .main-nav { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 0; }
+        .nav-links { display: flex; list-style: none; flex-wrap: wrap; }
+        .nav-links li a { display: block; padding: 14px 22px; color: #1e3a5f; font-weight: 500; text-decoration: none; border-right: 1px solid #eef2f6; transition: background 0.2s; }
+        .nav-links li a:hover { background: #f0f5fa; color: #d94f3d; }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 15px 0; font-size: 0.85rem; color: #64748b; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(145deg, #0b3d5c 0%, #1a5c7a 60%, #2d6e8a 100%); padding: 60px 0; margin-bottom: 30px; }
+        .hero-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+        .hero-text h2 { color: #ffffff; font-size: 2.4rem; font-weight: 800; line-height: 1.3; margin-bottom: 18px; }
+        .hero-text p { color: #d1e2ef; font-size: 1.1rem; margin-bottom: 24px; }
+        .hero-badges { display: flex; gap: 15px; flex-wrap: wrap; }
+        .badge { background: rgba(255,255,255,0.12); padding: 8px 18px; border-radius: 30px; color: #e8f0f6; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.2); }
+        .hero-visual { background: #ffffff; border-radius: 18px; padding: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+        .hero-visual h3 { font-size: 1.3rem; color: #0b3d5c; margin-bottom: 15px; border-bottom: 2px dashed #bcd4e2; padding-bottom: 10px; }
+        .top-shop-list { list-style: none; }
+        .top-shop-list li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eef2f6; font-size: 0.98rem; }
+        .top-shop-list li:last-child { border-bottom: none; }
+        .shop-name { font-weight: 600; color: #1e3a5f; }
+        .shop-tag { background: #edf3f8; color: #0b3d5c; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; }
+
+        /* Section common */
+        section { margin-bottom: 40px; }
+        .section-title { font-size: 1.7rem; font-weight: 700; color: #0b3d5c; margin-bottom: 10px; position: relative; padding-left: 18px; }
+        .section-title::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 30px; background: #d94f3d; border-radius: 3px; }
+        .section-sub { color: #5a7184; margin-bottom: 24px; font-size: 0.95rem; }
+
+        /* Category Cards */
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; }
+        .cate-card { background: white; border-radius: 14px; padding: 25px 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #e9eef3; }
+        .cate-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        .cate-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .cate-card h3 { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 6px; }
+        .cate-card p { font-size: 0.8rem; color: #64748b; }
+
+        /* Website grid */
+        .site-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
+        .site-card { background: white; border-radius: 14px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #e3eaf0; transition: all 0.2s; }
+        .site-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        .site-card .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .site-card .card-head h3 { font-size: 1.3rem; color: #0b3d5c; }
+        .official-tag { background: #e6f7ed; color: #1e7b4e; padding: 3px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+        .site-card .desc { color: #3d566e; font-size: 0.92rem; margin-bottom: 14px; }
+        .site-card .features { list-style: none; margin-bottom: 16px; }
+        .site-card .features li { font-size: 0.88rem; padding: 4px 0; color: #2d4b65; }
+        .site-card .features li::before { content: '✓ '; color: #1e7b4e; font-weight: bold; }
+        .btn { display: inline-block; background: #0b3d5c; color: white; text-decoration: none; padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 500; transition: background 0.2s; }
+        .btn:hover { background: #d94f3d; }
+
+        /* Guide Steps */
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 15px; }
+        .step-item { background: white; border-radius: 14px; padding: 25px 20px; position: relative; border: 1px solid #e3eaf0; }
+        .step-num { font-size: 2.2rem; font-weight: 800; color: #d94f3d; opacity: 0.25; position: absolute; top: 10px; right: 15px; }
+        .step-item h4 { color: #0b3d5c; font-size: 1.15rem; margin-bottom: 8px; }
+        .step-item p { font-size: 0.9rem; color: #3d566e; }
+
+        /* Shopping Tips */
+        .tips-box { background: #ffffff; border-radius: 16px; padding: 30px; border-left: 6px solid #d94f3d; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
+        .tips-box h3 { color: #0b3d5c; font-size: 1.4rem; margin-bottom: 18px; }
+        .tips-list { list-style: none; }
+        .tips-list li { padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 0.95rem; color: #2d4b65; }
+        .tips-list li:last-child { border-bottom: none; }
+
+        /* FAQ */
+        .faq-list { display: grid; gap: 15px; }
+        .faq-item { background: white; border-radius: 12px; padding: 20px 25px; border: 1px solid #e3eaf0; }
+        .faq-item h3 { font-size: 1.05rem; color: #0b3d5c; margin-bottom: 6px; }
+        .faq-item p { font-size: 0.92rem; color: #3d566e; }
+
+        /* Footer */
+        .site-footer { background: #0b2a3f; color: #a8c1d4; padding: 40px 0 20px; margin-top: 50px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 25px; }
+        .footer-content h4 { color: #ffffff; font-size: 1.1rem; margin-bottom: 15px; }
+        .footer-content ul { list-style: none; }
+        .footer-content ul li { padding: 4px 0; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #1e4a66; font-size: 0.8rem; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .hero-text h2 { font-size: 2rem; }
+            .nav-links li a { padding: 12px 15px; font-size: 0.9rem; }
+        }
+        @media (max-width: 600px) {
+            .header-inner { flex-direction: column; align-items: flex-start; }
+            .header-search { max-width: 100%; width: 100%; }
+            .hero { padding: 40px 0; }
+            .hero-text h2 { font-size: 1.6rem; }
+            .section-title { font-size: 1.4rem; }
+            .site-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <h1>俄购宝<span>.</span></h1>
+            <div class="sub">俄罗斯购物网站直邮导航</div>
+        </div>
+        <div class="header-search">
+            <input type="text" placeholder="搜索商品、网站或品牌...">
+            <button>搜索</button>
+        </div>
+        <div class="header-contact">
+            <strong>海淘客服</strong>
+            周一至周六 9:00-18:00
+        </div>
+    </div>
+</header>
+
+<nav class="main-nav">
+    <div class="container">
+        <ul class="nav-links">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">俄罗斯商城</a></li>
+            <li><a href="#">食品专区</a></li>
+            <li><a href="#">紫金琥珀</a></li>
+            <li><a href="#">美妆个护</a></li>
+            <li><a href="#">海淘攻略</a></li>
+            <li><a href="#">物流查询</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="breadcrumb">首页 &gt; 俄罗斯购物网站大全</div>
+</div>
+
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h2>一站式探索俄罗斯优质购物网站</h2>
+            <p>从本土电商到特色商品，我们为您甄选可靠、实惠、支持直邮中国的俄罗斯购物平台。无论是经典紫金、琥珀蜜蜡，还是风味独特的俄罗斯食品，都能轻松找到购买渠道。</p>
+            <div class="hero-badges">
+                <span class="badge">🛡️ 安全认证</span>
+                <span class="badge">🚚 直邮中国</span>
+                <span class="badge">💰 卢布结算</span>
+                <span class="badge">⭐ 正品保障</span>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <h3>🏆 热门购物网站排行</h3>
+            <ul class="top-shop-list">
+                <li><span class="shop-name">OZON</span> <span class="shop-tag">综合电商</span></li>
+                <li><span class="shop-name">Wildberries</span> <span class="shop-tag">服饰百货</span></li>
+                <li><span class="shop-name">Yandex Market</span> <span class="shop-tag">科技数码</span></li>
+                <li><span class="shop-name">俄罗斯国家商店</span> <span class="shop-tag">食品特产</span></li>
+                <li><span class="shop-name">琥珀屋</span> <span class="shop-tag">珠宝工艺品</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+
+    <!-- 商品分类 -->
+    <section>
+        <h2 class="section-title">热门选购分类</h2>
+        <p class="section-sub">根据您的需求快速定位俄罗斯购物网站</p>
+        <div class="category-grid">
+            <div class="cate-card">
+                <div class="cate-icon">🍫</div>
+                <h3>食品零食</h3>
+                <p>巧克力、糖果、鱼子酱</p>
+            </div>
+            <div class="cate-card">
+                <div class="cate-icon">💍</div>
+                <h3>紫金饰品</h3>
+                <p>585紫金、戒指吊坠</p>
+            </div>
+            <div class="cate-card">
+                <div class="cate-icon">🧴</div>
+                <h3>美妆护肤</h3>
+                <p>玻尿酸、老奶奶面膜</p>
+            </div>
+            <div class="cate-card">
+                <div class="cate-icon">🐻</div>
+                <h3>琥珀蜜蜡</h3>
+                <p>原石、雕刻、手串</p>
+            </div>
+            <div class="cate-card">
+                <div class="cate-icon">📦</div>
+                <h3>生活百货</h3>
+                <p>厨具、家纺、日用品</p>
+            </div>
+            <div class="cate-card">
+                <div class="cate-icon">⚽</div>
+                <h3>运动户外</h3>
+                <p>户外装备、运动服饰</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要购物网站 -->
+    <section>
+        <h2 class="section-title">主流俄罗斯购物网站详解</h2>
+        <p class="section-sub">收录俄罗斯本土最受欢迎、支持国际配送的电商平台，助您放心下单</p>
+        <div class="site-grid">
+            <div class="site-card">
+                <div class="card-head">
+                    <h3>OZON</h3>
+                    <span class="official-tag">俄罗斯亚马逊</span>
+                </div>
+                <p class="desc">俄罗斯最大的综合类电商平台之一，商品覆盖图书、电子、服装、食品等数百万种，支持配送中国。</p>
+                <ul class="features">
+                    <li>中文界面（部分支持）</li>
+                    <li>直邮中国服务</li>
+                    <li>经常有优惠活动</li>
+                </ul>
+                <a href="#" class="btn">前往选购</a>
+            </div>
+            <div class="site-card">
+                <div class="card-head">
+                    <h3>Wildberries</h3>
+                    <span class="official-tag">本土最大鞋服平台</span>
+                </div>
+                <p class="desc">俄罗斯市场份额领先的电商平台，以服饰、鞋靴、家居用品见长，性价比高，品类齐全。</p>
+                <ul class="features">
+                    <li>海量时尚单品</li>
+                    <li>价格优势明显</li>
+                    <li>需转运或代购</li>
+                </ul>
+                <a href="#" class="btn">前往选购</a>
+            </div>
+            <div class="site-card">
+                <div class="card-head">
+                    <h3>Yandex Market</h3>
+                    <span class="official-tag">比价购物平台</span>
+                </div>
+                <p class="desc">俄罗斯最大的比价购物平台，汇集众多商家，适合购买电子产品、家电及品牌商品。</p>
+                <ul class="features">
+                    <li>多商家比价</li>
+                    <li>电子数码齐全</li>
+                    <li>品质有保证</li>
+                </ul>
+                <a href="#" class="btn">前往选购</a>
+            </div>
+            <div class="site-card">
+                <div class="card-head">
+                    <h3>琥珀屋</h3>
+                    <span class="official-tag">俄式珠宝</span>
+                </div>
+                <p class="desc">专营俄罗斯琥珀、蜜蜡、紫金首饰，支持定制，提供国际物流，是购买俄式珠宝的热门选择。</p>
+                <ul class="features">
+                    <li>天然琥珀蜜蜡</li>
+                    <li>支持证书鉴定</li>
+                    <li>可直邮中国</li>
+                </ul>
+                <a href="#" class="btn">前往选购</a>
+            </div>
+            <div class="site-card">
+                <div class="card-head">
+                    <h3>俄罗斯风味馆</h3>
+                    <span class="official-tag">食品专营</span>
+                </div>
+                <p class="desc">专注俄罗斯食品的在线商店，紫皮糖、提拉米苏、鱼子酱、伏特加等应有尽有。</p>
+                <ul class="features">
+                    <li>特色零食齐全</li>
+                    <li>中文客服</li>
+                    <li>现货速发</li>
+                </ul>
+                <a href="#" class="btn">前往选购</a>
+            </div>
+            <div class="site-card">
+                <div class="card-head">
+                    <h3>俄优选</h3>
+                    <span class="official-tag">综合海淘</span>
+                </div>
+                <p class="desc">面向中国消费者的俄罗斯商品平台，涵盖食品、美妆、日化等热门品类，支持中文下单。</p>
+                <ul class="features">
+                    <li>全中文界面</li>
+                    <li>支付宝/微信支付</li>
+                    <li>集中发货</li>
+                </ul>
+                <a href="#" class="btn">前往选购</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 选购指南 -->
+    <section>
+        <h2 class="section-title">俄罗斯海淘四步走</h2>
+        <p class="section-sub">从挑选商品到收货，清晰流程让您购物无忧</p>
+        <div class="steps-grid">
+            <div class="step-item">
+                <span class="step-num">01</span>
+                <h4>选择平台</h4>
+                <p>根据购买需求挑选合适网站，综合比较价格、运费、口碑。新手可选支持中文的购物平台。</p>
+            </div>
+            <div class="step-item">
+                <span class="step-num">02</span>
+                <h4>注册下单</h4>
+                <p>使用邮箱注册账号，填写国际配送地址。注意部分网站需使用俄语或英语填写。</p>
+            </div>
+            <div class="step-item">
+                <span class="step-num">03</span>
+                <h4>物流转运</h4>
+                <p>选择直邮或转运服务。直邮更方便，转运适合购买多家商品合并节省运费。</p>
+            </div>
+            <div class="step-item">
+                <span class="step-num">04</span>
+                <h4>清关收货</h4>
+                <p>关注物流单号，配合清关资料提交。个人自用商品通常享有一定免税额度。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 购物贴士 -->
+    <section>
+        <div class="tips-box">
+            <h3>💡 俄罗斯购物贴心提示</h3>
+            <ul class="tips-list">
+                <li>支付方式：部分俄罗斯网站支持中国银联、 Visa、 Mastercard，部分需使用俄罗斯电子钱包或代付服务。</li>
+                <li>语言问题：建议使用浏览器自动翻译，或选择带有中文界面的购物平台。</li>
+                <li>关税政策：个人包裹入境中国通常免征额度为1000元人民币，超出部分可能产生关税，请合理控制订单金额。</li>
+                <li>物流时效：俄直邮一般需要15-30天，冬季旺季可能延长，请预留充足时间。</li>
+                <li>退换货：国际订单退换货流程复杂，下单前务必仔细核对商品规格、尺寸、颜色等信息。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section>
+        <h2 class="section-title">俄罗斯购物常见问题</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Q: 俄罗斯购物网站哪家支持直邮中国？</h3>
+                <p>目前OZON、Yandex Market以及部分专营店支持直邮中国。Wildberries等平台通常需要通过转运公司操作。建议在下单前查看网站的配送政策。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q: 在俄罗斯网站购物如何支付？</h3>
+                <p>大多数俄罗斯电商支持Visa、Mastercard国际信用卡。部分平台开始支持银联。若没有国际信用卡，可以寻找可靠的代付服务或选择支持支付宝的华人电商平台。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q: 俄罗斯紫金和黄金有什么区别？</h3>
+                <p>紫金是俄罗斯特有的黄金与铜、镍等金属的合金，色泽偏紫红，硬度高，不易变形。常见标号为585（含金量58.5%），款式设计更具俄式风情。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q: 购买俄罗斯食品需要注意什么？</h3>
+                <p>注意查看食品保质期，肉类、奶制品等有入境限制，建议选购巧克力、糖果、饼干等预包装食品。夏季高温时避免购买易融化商品。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q: 俄罗斯购物网站的商品是正品吗？</h3>
+                <p>OZON、Wildberries等大型平台对商家有资质审核，正品率较高。购买贵重物品（如紫金、琥珀）建议选择官方店铺或要求提供鉴定证书。</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <h4>俄购宝</h4>
+                <p>专注俄罗斯购物网站导航与海淘攻略，让您轻松买遍俄罗斯好物。</p>
+            </div>
+            <div>
+                <h4>快速链接</h4>
+                <ul>
+                    <li>俄罗斯商城</li>
+                    <li>海淘流程</li>
+                    <li>物流运费</li>
+                    <li>关税说明</li>
+                </ul>
+            </div>
+            <div>
+                <h4>热门品类</h4>
+                <ul>
+                    <li>俄罗斯食品</li>
+                    <li>紫金首饰</li>
+                    <li>琥珀蜜蜡</li>
+                    <li>美妆护肤</li>
+                </ul>
+            </div>
+            <div>
+                <h4>帮助中心</h4>
+                <ul>
+                    <li>常见问题</li>
+                    <li>联系客服</li>
+                    <li>隐私政策</li>
+                    <li>用户协议</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 俄罗斯购物网站导航 | 本页面仅提供信息参考，购物时请谨慎甄别网站真实性。
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
