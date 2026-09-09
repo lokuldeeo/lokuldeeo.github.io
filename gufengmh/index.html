@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古风漫画-古风漫画精选推荐与阅读指南</title>
+    <meta name="description" content="探索绝美古风漫画世界，从经典到新作，涵盖古风漫画推荐、分类解析、阅读平台指南与创作入门，为古风漫画爱好者提供一站式内容参考。">
+    <meta name="keywords" content="古风漫画, 古风漫画推荐, 古风漫画大全, 古风漫画阅读, 古风漫画分类, 古风漫画入门">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        /* 全局基础样式与调色板 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            background: #f9f5ef; /* 古纸底色 */
+            color: #3e2e23;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 页眉与品牌区 */
+        .site-header {
+            background: #ffffffd9;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e7d8c3;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #6b4c2f;
+            letter-spacing: 1px;
+        }
+
+        .brand-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            font-weight: 500;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #4e3a2b;
+            padding: 6px 2px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            font-size: 1.05rem;
+        }
+
+        .main-nav a:hover {
+            border-bottom-color: #b48a5a;
+            color: #1d130c;
+        }
+
+        /* 移动端导航调整 */
+        @media (max-width: 640px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .main-nav ul {
+                flex-wrap: wrap;
+                gap: 16px 20px;
+                padding-top: 8px;
+            }
+        }
+
+        /* 首屏 hero 区域 */
+        .hero {
+            background: linear-gradient(145deg, #f3ede4, #faeedf);
+            border-radius: 0 0 60px 60px / 20px;
+            padding: 48px 0 56px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #e4d3bc;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1 1 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #3a2819;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            position: relative;
+            display: inline-block;
+        }
+        .hero-text h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #b48a5a;
+            border-radius: 4px;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #5b4635;
+            max-width: 600px;
+            margin: 24px 0 20px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #b48a5a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            border: 1px solid #a37749;
+            transition: 0.25s;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #6b4c2f;
+            border: 1px solid #a98d6f;
+            box-shadow: none;
+        }
+
+        .btn:hover {
+            background: #9c6f42;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+        }
+
+        .btn-outline:hover {
+            background: #efe2d2;
+        }
+
+        .hero-art {
+            flex: 0 0 240px;
+            text-align: center;
+            font-size: 8rem;
+            opacity: 0.8;
+            filter: drop-shadow(0 12px 20px rgba(0,0,0,0.1));
+        }
+
+        @media (max-width: 720px) {
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-art { font-size: 5rem; flex-basis: 100px; }
+        }
+
+        /* 核心内容区 */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #3d2c1d;
+            margin: 48px 0 24px;
+            border-left: 6px solid #b48a5a;
+            padding-left: 20px;
+        }
+
+        .section-sub {
+            color: #6d5845;
+            margin-bottom: 28px;
+            font-size: 1.1rem;
+        }
+
+        /* 卡片网格 (分类卡片) */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 12px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+            border: 1px solid #ebdfd0;
+            transition: 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 28px rgba(0,0,0,0.06);
+            border-color: #ccb699;
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4e3421;
+        }
+
+        .card p {
+            color: #5d4a37;
+            font-size: 0.98rem;
+        }
+
+        /* 详细说明板块/步骤 */
+        .guide-steps {
+            background: #fbf6ef;
+            border-radius: 28px;
+            padding: 28px 30px;
+            margin: 32px 0;
+            border: 1px solid #e7d6bd;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .step-num {
+            background: #b48a5a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            color: #3c2c1c;
+        }
+
+        .step-content p {
+            color: #584b3d;
+        }
+
+        /* 优势特色列表 */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .feature-list li {
+            background: #f9f2e8;
+            padding: 18px 16px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #e3d1b8;
+        }
+
+        .feature-list span {
+            font-size: 2rem;
+        }
+
+        /* 注意事项/FAQ 样式 */
+        .notice-box {
+            background: #f1e8dd;
+            padding: 28px 24px;
+            border-radius: 24px;
+            margin: 24px 0;
+            border-left: 8px solid #9c7a52;
+        }
+
+        .faq-item {
+            margin-bottom: 26px;
+            border-bottom: 1px dashed #c6b29b;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #3f2e1e;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 10px;
+            align-items: baseline;
+        }
+
+        .faq-question::before {
+            content: '问';
+            background: #b48a5a;
+            color: white;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-weight: 400;
+        }
+
+        .faq-answer {
+            color: #5f4c38;
+            padding-left: 12px;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #2c211a;
+            color: #dacbbc;
+            margin-top: 60px;
+            padding: 32px 0;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #f1e3d4;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-links a {
+            color: #dacbbc;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            margin-top: 24px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 640px) {
+            .section-title { font-size: 1.6rem; }
+            .container { padding: 0 16px; }
+            .guide-steps { padding: 18px; }
+            .footer-content { flex-direction: column; }
+        }
+
+        /* 相关主题区块 */
+        .related-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 24px 0 10px;
+        }
+
+        .tag {
+            background: #e8dbca;
+            padding: 8px 18px;
+            border-radius: 40px;
+            color: #4a3423;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <span class="brand-icon">🎨</span>
+                <span>古风漫画志</span>
+            </div>
+            <nav class="main-nav" aria-label="主导航">
+                <ul>
+                    <li><a href="#recommend">精选推荐</a></li>
+                    <li><a href="#category">分类</a></li>
+                    <li><a href="#guide">阅读指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏区域 -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>古风漫画</h1>
+                    <p class="hero-desc">水墨丹青与分镜交织，穿越千年爱恨情仇。尽览古风漫画的唯美世界与江湖气韵。</p>
+                    <div class="hero-cta">
+                        <a href="#recommend" class="btn">进入古风世界</a>
+                        <a href="#category" class="btn btn-outline">浏览分类</a>
+                    </div>
+                </div>
+                <div class="hero-art" aria-hidden="true">🏮</div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- 核心内容区：古风漫画导语 -->
+            <section id="intro" style="margin-top:12px;">
+                <p style="font-size:1.15rem; background: #fff7ef; padding: 20px 24px; border-radius: 40px; border:1px solid #e6d2ba;">
+                    古风漫画是以中国古代历史、武侠、仙侠、宫廷或民间传说为背景的漫画类型。它通常融合飘逸服饰、古典建筑、传统乐器等元素，画风唯美细腻。无论你是寻找长篇剧情，或是偏爱短篇唯美，古风漫画都提供了丰富的选择。
+                </p>
+            </section>
+
+            <!-- 精选推荐卡片 -->
+            <section id="recommend">
+                <h2 class="section-title">✨ 古风漫画精选推荐</h2>
+                <p class="section-sub">从人气经典到小众佳作，以下分类帮你快速定位心仪故事。</p>
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="card-icon">🌸</div>
+                        <h3>宫廷权谋</h3>
+                        <p>深宫锁梦，步步惊心。精致的宫斗、夺嫡与情感纠葛，画风华丽，服饰考究。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">⚔️</div>
+                        <h3>武侠江湖</h3>
+                        <p>刀光剑影，侠骨柔情。看少年仗剑走天涯，门派纷争与武林秘史交织。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🌿</div>
+                        <h3>仙侠奇缘</h3>
+                        <p>御剑乘风，三界轮回。前世今生与师徒虐恋，仙气飘飘的东方幻想。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🏯</div>
+                        <h3>民间志怪</h3>
+                        <p>聊斋风骨，狐妖书生。志怪传奇与人性百态，诡谲又浪漫。</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 分类及详细说明 -->
+            <section id="category">
+                <h2 class="section-title">📚 古风漫画分类面面观</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 24px;">
+                    <div style="flex: 1 1 300px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 12px;">按题材</h3>
+                        <ul style="list-style: none; background: #f2e9dd; padding: 20px; border-radius: 24px;">
+                            <li style="padding: 8px 0;">· 历史正剧：还原朝代风貌</li>
+                            <li style="padding: 8px 0;">· 穿越重生：现代思维碰撞古代</li>
+                            <li style="padding: 8px 0;">· 江湖武侠：门派与侠义</li>
+                            <li style="padding: 8px 0;">· 宫廷宅斗：深墙内的博弈</li>
+                            <li style="padding: 8px 0;">· 神魔妖怪：东方奇幻色彩</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1 1 300px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 12px;">按风格</h3>
+                        <ul style="list-style: none; background: #f2e9dd; padding: 20px; border-radius: 24px;">
+                            <li style="padding: 8px 0;">· 水墨写意：留白与意境</li>
+                            <li style="padding: 8px 0;">· 工笔重彩：精致华丽</li>
+                            <li style="padding: 8px 0;">· 唯美青春：飘逸柔光</li>
+                            <li style="padding: 8px 0;">· 黑白古韵：传统漫画质感</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 阅读指南/步骤 -->
+            <section id="guide">
+                <h2 class="section-title">🧭 古风漫画阅读指南</h2>
+                <div class="guide-steps">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h3>确定偏好题材</h3>
+                            <p>喜欢权谋还是仙侠？从感兴趣的背景开始，更容易沉浸。可参考上方的分类卡片。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h3>关注画风与分镜</h3>
+                            <p>古风漫画的美术风格至关重要。试读几话，感受线条、配色和氛围是否合拍。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h3>选择靠谱平台</h3>
+                            <p>许多正版平台提供高清古风漫画，关注官方更新。部分作品有实体书或动态漫。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h3>参与同好讨论</h3>
+                            <p>社区中的剧情解析与考据能让你发现更多细节，增加阅读乐趣。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 优势与注意事项 -->
+            <section>
+                <h2 class="section-title">⭐ 古风漫画的魅力与提醒</h2>
+                <ul class="feature-list">
+                    <li><span>🎭</span> 服饰场景考究，文化气息浓厚</li>
+                    <li><span>📖</span> 叙事节奏多样，长中短篇齐备</li>
+                    <li><span>🌙</span> 情感刻画细腻，意境深远</li>
+                    <li><span>🖌️</span> 画风独特，具有东方美学</li>
+                </ul>
+                <div class="notice-box">
+                    <h3 style="margin-bottom: 12px; font-size: 1.4rem;">📌 注意事项</h3>
+                    <p>① 部分作品包含虚构历史改编，并非正史；② 关注正版阅读渠道，支持创作者；③ 因连载周期不同，请留意更新状态与完结信息；④ 古风漫画中偶尔有文言对白，结合语境理解更佳。</p>
+                </div>
+            </section>
+
+            <!-- 相关主题 -->
+            <section>
+                <h2 class="section-title">🏷️ 相关热门主题</h2>
+                <div class="related-tags">
+                    <span class="tag"># 古风恋爱</span>
+                    <span class="tag"># 穿越漫画</span>
+                    <span class="tag"># 武侠江湖</span>
+                    <span class="tag"># 宫廷漫画</span>
+                    <span class="tag"># 水墨风</span>
+                    <span class="tag"># 玄幻古风</span>
+                    <span class="tag"># 女频古风</span>
+                    <span class="tag"># 男频古风</span>
+                </div>
+            </section>
+
+            <!-- FAQ 区块 -->
+            <section id="faq">
+                <h2 class="section-title">❓ 古风漫画常见问题</h2>
+                <div class="faq-item">
+                    <div class="faq-question">新手入坑古风漫画，应该先看哪些作品？</div>
+                    <div class="faq-answer">可以从口碑经典或高人气作品尝试，不少平台有古风分类榜单。建议先选择自己感兴趣的题材，如宫廷或仙侠，并留意画风是否对胃口。许多作品的第一话都是免费试读。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">古风漫画和国漫是什么关系？</div>
+                    <div class="faq-answer">古风漫画是国漫中重要的题材分支，专指以中国古代背景为舞台的作品。国漫还包含现代、科幻等题材。古风漫画通常强调东方美学和古典元素。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何辨别古风漫画中历史与虚构？</div>
+                    <div class="faq-answer">多数古风漫画以真实历史为背景进行艺术加工，人物与事件常常虚构。若对历史细节感兴趣，可以查阅相关正史资料，但漫画核心是娱乐与情感表达，不必当作史书。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">古风漫画的阅读平台有哪些选择？</div>
+                    <div class="faq-answer">国内众多漫画APP均设有国漫/古风分区，如快看漫画、腾讯动漫、哔哩哔哩漫画等，同时部分作品发行实体单行本。建议通过官方渠道阅读，支持正版。</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">🎋 古风漫画 · 墨韵之间</div>
+                <div class="footer-links">
+                    <a href="#">关于我们</a>
+                    <a href="#">投稿</a>
+                    <a href="#">联系方式</a>
+                </div>
+            </div>
+            <div class="copyright">© 古风漫画爱好者小站 · 探寻纸上江湖</div>
+        </div>
+    </footer>
+</body>
+</html>
